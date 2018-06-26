@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Canvas GRADIENT</title>
+	<style type="text/css">
+		#canvas1
+		{
+            border: dotted 3px red;
+            background-color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var canvas = document.getElementById('canvas1');
+			if (canvas && canvas.getContext) 
+			{
+                var ctx = canvas.getContext("2d");
+                if (ctx) 
+                {
+                	var gradient = ctx.createLinearGradient(0,0, canvas.width, 0);
+                    gradient.addColorStop(0, "yellow");
+                    gradient.addColorStop(1, "red");
+                    ctx.fillStyle = gradient;
+                    ctx.fillRect(0,0,canvas.width, canvas.height);
+                }                
+			}			
+		}
+	</script>
+</head>
+<body>
+    <h1>Canvas Gradiente</h1>
+    <canvas id="canvas1" width="500px" height="450px">
+    	Tu navegador no soporta el CANVAS
+    </canvas>
+</body>
+</html>

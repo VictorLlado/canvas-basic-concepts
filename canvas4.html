@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Canvas Arcos y Paths</title>
+	<style type="text/css">
+		#canvas1
+		{
+            border: dotted 3px red;
+            background-color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var canvas = document.getElementById('canvas1');
+			if (canvas && canvas.getContext) 
+			{
+                var ctx = canvas.getContext("2d");
+                if (ctx) 
+                {
+                	ctx.lineWidth = 10;
+                    ctx.strokeStyle = "red";
+                    ctx.fillStyle = "yellow";
+                    ctx.beginPath();
+                    ctx.moveTo(50,100);
+                    ctx.lineTo(100,50);
+                    ctx.lineTo(150,100);
+                    ctx.lineTo(100,150);
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(200,100);
+                    ctx.lineTo(250,50);
+                    ctx.lineTo(300,100);
+                    ctx.lineTo(250,150);
+                    ctx.closePath();
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.moveTo(350,100);
+                    ctx.lineTo(400,50);
+                    ctx.lineTo(450,100);
+                    ctx.lineTo(400,150);
+                    ctx.stroke();
+                    ctx.fill();
+                    ctx.beginPath();
+                    ctx.arc(112,230,50,1.1*Math.PI, 1.9*Math.PI),
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.arc(250,230,50,1.1*Math.PI, 1.9*Math.PI, true),
+                    ctx.stroke();
+                    ctx.beginPath();
+                    ctx.arc(402,230,50,0, 2*Math.PI),
+                    ctx.stroke();
+                }                
+			}			
+		}
+	</script>
+</head>
+<body>
+    <h1>Canvas Arc y Path</h1>
+    <canvas id="canvas1" width="500px" height="450px">
+    	Tu navegador no soporta el CANVAS
+    </canvas>
+</body>
+</html>

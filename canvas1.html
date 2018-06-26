@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>Canvas</title>
+	<style type="text/css">
+		#canvas1
+		{
+            border: dotted 3px red;
+            background-color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var canvas = document.getElementById('canvas1');
+			if (canvas && canvas.getContext) 
+			{
+                var ctx = canvas.getContext("2d");
+                if (ctx) 
+                {
+                	ctx.fillStyle = "yellow";
+                	ctx.strokeStyle = "#FF0000";
+                	ctx.lineWidth = 5;
+                	ctx.fillRect(50, 50, 100, 100);
+                	ctx.strokeRect(50, 50, 100, 100);
+                }                
+			}			
+		}
+	</script>
+</head>
+<body>
+    <h1>Conceptos basicos de canvas</h1>
+    <canvas id="canvas1" width="500px" height="450px">
+    	Tu navegador no soporta el CANVAS
+    </canvas>
+</body>
+</html>
